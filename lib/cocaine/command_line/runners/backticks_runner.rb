@@ -14,8 +14,7 @@ module Cocaine
       end
 
       def call(command, env = {}, options = {})
-        with_modified_environment(env) do
-          `#{command}`
+        with_modified_environment(env) { `#{command}` }
         end
       end
 

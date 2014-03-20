@@ -23,7 +23,9 @@ module Cocaine
       end
 
       def ran?(predicate_command)
-        @commands.any?{|(command, env)| command =~ Regexp.new(predicate_command) }
+        @commands.any? do |(command, env)| 
+          command =~ Regexp.new(predicate_command)
+        end
       end
 
     end
